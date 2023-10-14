@@ -1,0 +1,29 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Update Profile</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()" class="my-4">
+                            <div class="form-group">
+                              <label for="profilePicture">Profile Picture</label>
+                              <input type="file" id="profilePicture" class="form-control" formControlName="profilePicture">
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="bio">Bio</label>
+                              <textarea id="bio" class="form-control" formControlName="bio"></textarea>
+                            </div>
+                          
+                            <button type="submit" class="btn btn-primary" [disabled]="updateProfileForm.invalid">UPDATE</button>
+                            <button type="button" class="btn btn-secondary" (click)="onSkip()">SKIP</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
